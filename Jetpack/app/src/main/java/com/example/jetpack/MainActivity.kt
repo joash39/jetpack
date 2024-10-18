@@ -42,7 +42,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(desc1: String, desc2: String, desc3: String, modifier: Modifier = Modifier) {
     val image = painterResource(id = R.drawable.bg_compose_background)
-    Surface {
+    
+Column(verticalArrangement = Arrangement.SpaceBetween) {
         Image(
             painter = image,
             contentDescription = null,
@@ -50,44 +51,41 @@ fun Greeting(desc1: String, desc2: String, desc3: String, modifier: Modifier = M
         )
 
 
-
-
         Text(
             text = desc1,
             modifier = modifier
-                .fillMaxSize()
-                .padding(top = 130.dp)
-                 ,
-            lineHeight = 50.sp,
-            fontSize = 30.sp,
-
-
-            )
-            Text(
-                text = desc2,
-                modifier = modifier
-                    .fillMaxSize()
-                    .padding(top = 180.dp)
-                    ,
-                fontSize = 12.sp,
-                lineHeight = 20.sp
-
-
-            )
-            Text(
-                text = desc3,
-                modifier = modifier
-                    .fillMaxSize()
-                    .padding(top = 250.dp),
-                fontSize = 12.sp,
-                lineHeight = 20.sp
+                .padding(24.dp),
+            textAlign = TextAlign.Center,
+            fontSize = 24.sp,
 
 
             )
 
+        Text(
+            text = desc2,
+            modifier = modifier
+                .padding(start = 16.dp, end = 16.dp),
+            fontSize = 12.sp,
+            textAlign = TextAlign.Justify
+
+
+        )
+        
+        Text(
+            text = desc3,
+            modifier = modifier
+                .padding(16.dp),
+            fontSize = 12.sp,
+
+            textAlign = TextAlign.Justify
+
+
+        )
 
 
     }
+
+    
 }
 
 @Preview(showBackground = true)
